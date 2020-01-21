@@ -8,8 +8,10 @@ const AnswersList = props => {
                 { props.answers.map((answer, index) => {
                     return(
                         <AnswerItem
+                            state={props.state ? props.state[answer.id] : null}
                             key={index}
                             answer={answer}
+                            onAnswerClick={props.onAnswerClick}
                         />
                     )
                 }) }
@@ -22,7 +24,7 @@ const styleAnswer = {
     listStyle: 'none',
     margin: 0,
     padding: '5px 10px',
-    border: '1px solid white',
+
     marginBottom: '5px',
     cursor: 'pointer',
     'hover': {
@@ -30,5 +32,7 @@ const styleAnswer = {
         transaction: 'background .3s ease-in-out',
     }
 };
+
+
 
 export default AnswersList

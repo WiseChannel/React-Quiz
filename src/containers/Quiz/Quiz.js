@@ -5,6 +5,7 @@ import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz'
 
 class Quiz extends Component{
     state = {
+        results: {},
         isFinished: false,
         activeQuestion: 0,
         answerState: null,
@@ -45,7 +46,8 @@ class Quiz extends Component{
             // }
         }
 
-        const question = this.state.quiz[this.state.activeQuestion]
+        const question = this.state.quiz[this.state.activeQuestion];
+        const results = this.state.results
 
         if (question.rightAnswer === answerId) {
 
